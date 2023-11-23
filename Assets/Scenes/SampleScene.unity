@@ -826,6 +826,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1799733765}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309051559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,7 +1921,7 @@ MonoBehaviour:
   _fillspeed: 10
   _HPRegen: 0.05
   _HPShow: {fileID: 699969591}
---- !u!114 &919707887
+--- !u!114 &919707889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1918,11 +1930,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 919707880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7657e5f907908f4b96685399f2cd711, type: 3}
+  m_Script: {fileID: 11500000, guid: 915c325ae002fee4b8e55daae40cec78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _innerCircle: {fileID: 845462411}
-  moveSpeed: 80
+  _InnerCirclie: {fileID: 845462411}
+  _moveSpeed: 0
+  IC_original_pos: {x: 0, y: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,6 +2508,18 @@ MonoBehaviour:
       - m_Target: {fileID: 919707884}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: SpeedChange
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1799733765}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3197,6 +3222,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1799733765}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1480805142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3441,7 +3478,7 @@ PrefabInstance:
       addedObject: {fileID: 919707886}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b391605be4d8132469f603c68153d843, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 919707887}
+      addedObject: {fileID: 919707889}
   m_SourcePrefab: {fileID: 100100000, guid: b391605be4d8132469f603c68153d843, type: 3}
 --- !u!1 &1560496847
 GameObject:
@@ -3529,6 +3566,18 @@ MonoBehaviour:
       - m_Target: {fileID: 919707884}
         m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
         m_MethodName: SpeedChange
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1799733765}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4245,18 +4294,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 30218845}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1799733763}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

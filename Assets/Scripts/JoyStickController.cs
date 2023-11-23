@@ -1,26 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JoyStickController : MonoBehaviour
+public class Joystickcontroller : MonoBehaviour
 {
-    public Image _innerCircle;
-    Vector3 destination;
-    [SerializeField]
-    float moveSpeed = 80;
+    public Image _InnerCirclie;
+    public float _moveSpeed;
+    [SerializeField] private Vector2 IC_original_pos;
+    private Vector3 mousePos;
 
-    void Start()
+    private void Start()
     {
-        destination = _innerCircle.transform.position;
+      
     }
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            destination = Input.mousePosition;
-        }
 
-        _innerCircle.transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+    private void Update()
+    {
+        mousePos = Input.mousePosition;
+        
+    }
+
+    private void OnMouseDown()
+    {
+        _InnerCirclie.transform.position = mousePos; 
+    }
+
+    private void OnMouseUp()
+    {
+        
     }
 }

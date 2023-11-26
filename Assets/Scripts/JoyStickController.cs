@@ -1,35 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
+using System.Runtime.InteropServices;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Joystickcontroller : MonoBehaviour
-{
-    public Image _InnerCirclie;
-    public float _moveSpeed;
-    [SerializeField] private Vector2 IC_original_pos;
-    private Vector3 mousePos;
+public class Joystickcontroller : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler {
+
+    public Image joystickBG;
+    public Image joystick;
+    private Vector2 inputVector;
 
     private void Start()
     {
-      
+        joystickBG = GetComponent<Image>();
+        joystick = transform.GetChild(0).GetComponent<Image>();
     }
 
-    private void Update()
+    public virtual void OnPointerUp(PointerEventData eventData)
     {
-        mousePos = Input.mousePosition;
-        
+        inputVector = Vector2.zero;
+        joystick.rectTransform.anchoredPosition = Vector2.zero;
     }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        _InnerCirclie.transform.position = mousePos; 
+        OnDrag(eventData);
     }
 
-    private void OnMouseUp()
+    public virtual void OnDrag(PointerEventData eventData)
     {
-        
+        Vector2 pos;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickBG.rectTransform, eventData.position, eventData.pressEventCamera, out pos))
+        {
+            pos.x = (pos.x / joystickBG.rectTransform.sizeDelta.x);
+            pos.y = (pos.x / joystickBG.rectTransform.sizeDelta.y);
+
+            inputVector = new Vector2 (pos.x * 2 - 1, pos.y * 2 - 1);
+            inputVector = (inputVector.magnitude > 1.0f) ? inputVector.normalized : inputVector;
+
+            joystick.rectTransform.anchoredPosition = new Vector2(inputVector.x * (joystickBG.rectTransform.sizeDelta.x / 2), inputVector.y * (joystickBG.rectTransform.sizeDelta.y / 2));
+        }
     }
 }
+
